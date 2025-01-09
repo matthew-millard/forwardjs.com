@@ -1,0 +1,44 @@
+---
+import Discord from "../assets/discord.svg";
+import Meetup from "../assets/meetup.svg";
+import Github from "../assets/github.svg";
+---
+
+<nav>
+  <ul>
+    <li>
+      <a href="https://discord.gg/XMqZZtpPSK"
+        ><img src={Discord.src} width="24" />Discord</a
+      >
+    </li>
+    <li>
+      <a href="https://www.meetup.com/ottawa-forwardjs-meetup/"
+        ><img src={Meetup.src} width="20" />Meetup</a
+      >
+    </li>
+    <li>
+      <a href="https://github.com/forwardjs">
+        <img src={Github.src} width="20" />
+        Contribute</a
+      >
+    </li>
+  </ul>
+</nav>
+
+<style>
+  ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem 2rem;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+</style>

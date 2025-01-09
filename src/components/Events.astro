@@ -1,0 +1,90 @@
+---
+import { getCollection } from "astro:content";
+import Meetup from "../components/Meetup.astro";
+
+const pastEvents = await getCollection("pastEvents");
+const upcomingEvents = await getCollection("upcomingEvents");
+---
+
+<section>
+  <div class="events">
+    <h2>EVENTS</h2>
+    <div class="events__list">
+      <h3>UPCOMING EVENTS</h3>
+      {
+        upcomingEvents.length === 0 && (
+          <div>
+            <p>
+              Meetups are usually on the third Thursday of every month, with
+              RSVPs opening one week beforehand. Stay tuned for the next one!
+            </p>
+          </div>
+        )
+      }
+      {
+        upcomingEvents.map((event) => (
+          <Meetup
+            type="upcoming"
+            title={event.data.title}
+            dateTime={event.data.dateTime}
+            location={event.data.location.name}
+            address={event.data.location.address}
+            photo={event.data.photo}
+            eventUrl={event.data.eventUrl}
+            rsvpCount={event.data.rsvpCount}
+            memberPhotos={event.data.memberPhotos}
+            rsvpsOpen={event.data.rsvpsOpen}
+          />
+        ))
+      }
+    </div>
+    <div class="events__list">
+      <h3>PAST EVENTS</h3>
+      {pastEvents.length === 0 && <p>No past events</p>}
+      {
+        pastEvents.map((event) => (
+          <Meetup
+            type="past"
+            title={event.data.title}
+            dateTime={event.data.dateTime}
+            location={event.data.location.name}
+            address={event.data.location.address}
+            photo={event.data.photo}
+            eventUrl={event.data.eventUrl}
+            rsvpCount={event.data.rsvpCount}
+            memberPhotos={event.data.memberPhotos}
+            rsvpsOpen={event.data.rsvpsOpen}
+          />
+        ))
+      }
+      <a href="https://www.meetup.com/ottawa-forwardjs-meetup/events/?type=past"
+        >View more on Meetup</a
+      >
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--gray);
+    width: 100%;
+  }
+
+  .events {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 1000px;
+    padding: 1rem;
+  }
+
+  .events__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+</style>

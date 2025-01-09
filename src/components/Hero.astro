@@ -1,0 +1,87 @@
+---
+import ButtonLink from "./ButtonLink.astro";
+import peacetower from "../assets/peacetower.svg";
+import logo from "../assets/forward.svg";
+---
+
+<section>
+  <div class="hero">
+    <div class="hero__text">
+      <div class="hero__logo">
+        <img
+          id="logo"
+          src={logo.src}
+          alt="ForwardJS Logo"
+          fetchpriority="high"
+        />
+        <h1>FORWARDJS</h1>
+      </div>
+      <ButtonLink
+        href="https://github.com/OttawaReactJS/talks/issues/new"
+        target="_blank"
+      >
+        Submit a talk proposal 🎤
+      </ButtonLink>
+    </div>
+    <img
+      id="peacetower"
+      src={peacetower.src}
+      alt="Image of the Peace Tower"
+      fetchpriority="high"
+    />
+  </div>
+</section>
+
+<style>
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--gray);
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 1000px;
+    margin-top: 2rem;
+    overflow-x: hidden;
+    @media screen and (max-width: 900px) {
+      width: 100%;
+      grid-template-columns: 1fr;
+      place-items: center;
+      gap: 2rem;
+    }
+  }
+
+  .hero__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .hero__logo {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+  }
+
+  #peacetower {
+    width: 100%;
+    max-width: 470px;
+    transform: translateX(28px);
+  }
+
+  #logo {
+    width: 42px;
+    height: 42px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+</style>

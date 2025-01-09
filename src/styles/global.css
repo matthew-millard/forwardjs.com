@@ -1,0 +1,44 @@
+:root {
+  --purple: #814bfb;
+  --gray: #edf2f4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Noto Sans", serif;
+  font-optical-sizing: auto;
+  background-color: #fff;
+  color: #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  color: #4c4b51;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,137 @@
+---
+import { formatDateTime } from "../utils";
+
+const {
+  type,
+  title,
+  dateTime,
+  location,
+  address,
+  eventUrl,
+  photo,
+  memberPhotos,
+  rsvpCount,
+  rsvpsOpen,
+} = Astro.props;
+---
+
+<a href={eventUrl} class="box">
+  <div class="row">
+    <div class="information">
+      <date>📅 {formatDateTime(dateTime)}</date>
+      <h3>{title}</h3>
+      <div>
+        {location}
+      </div>
+    </div>
+    <div>
+      {photo && <img class="photo" src={photo} alt="Event photo" />}
+    </div>
+  </div>
+  <div class="row">
+    <div class="attendees">
+      {
+        memberPhotos.length > 0 &&
+          memberPhotos.map((photo) => (
+            <img
+              class="memberPhoto"
+              src={photo}
+              alt="Member photo"
+              width="32"
+              height="32"
+            />
+          ))
+      }
+      <span>{rsvpCount || 0} attendees</span>
+    </div>
+    {
+      type === "upcoming" && rsvpsOpen && (
+        <button class="rsvpButton">Attend</button>
+      )
+    }
+    {type === "upcoming" && !rsvpsOpen && <span>RSVPs closed</span>}
+    {type === "past" && <span>Event has ended</span>}
+  </div>
+</a>
+
+<style>
+  .box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    @media screen and (max-width: 675px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .information {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-self: flex-start;
+  }
+
+  .attendees {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .memberPhoto {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 0.5px solid #000;
+    margin-left: -16px;
+  }
+
+  .photo {
+    width: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    @media screen and (max-width: 675px) {
+      display: none;
+    }
+  }
+
+  .rsvpButton {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 2px solid #008000;
+    background-color: #fff;
+    color: #008000;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+  }
+
+  .rsvpButton:hover {
+    background-color: #008000;
+    color: #fff;
+  }
+
+  date {
+    font-size: 0.875rem;
+    color: #666;
+  }
+</style>

@@ -1,0 +1,130 @@
+---
+import { Image } from "astro:assets";
+import ButtonLink from "./ButtonLink.astro";
+
+import TalentLab from "../assets/talentlab.webp";
+import Shopify from "../assets/shopify.svg";
+import Spiria from "../assets/spiria.svg";
+import Fullscript from "../assets/fullscript.svg";
+import Jetbrains from "../assets/jetbrains.svg";
+
+const sponsors = [
+  {
+    name: "TalentLab",
+    logo: TalentLab,
+    href: "https://talentlab.com",
+  },
+  { name: "Shopify", logo: Shopify, href: "https://shopify.com" },
+  { name: "Spiria", logo: Spiria, href: "https://spiria.com" },
+  {
+    name: "Fullscript",
+    logo: Fullscript,
+    href: "https://fullscript.com",
+  },
+  {
+    name: "Jetbrains",
+    logo: Jetbrains,
+    href: "https://jetbrains.com",
+  },
+];
+---
+
+<section>
+  <div class="sponsors">
+    <h2>SPONSORS</h2>
+
+    <div class="marquee">
+      <ul>
+        {
+          sponsors.map((sponsor) => (
+            <li>
+              <ButtonLink href={sponsor.href}>
+                <Image src={sponsor.logo} alt={`${sponsor.name} Logo`} />
+              </ButtonLink>
+            </li>
+          ))
+        }
+      </ul>
+      <!-- these items are hidden unless the marquee is active -->
+      <ul aria-hidden="true" class="marquee__list marquee__hidden">
+        {
+          sponsors.map((sponsor) => (
+            <li class="marquee__item">
+              <ButtonLink href={sponsor.href}>
+                <Image src={sponsor.logo} alt={`${sponsor.name} Logo`} />
+              </ButtonLink>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    display: flex;
+    width: 100%;
+    background-color: var(--purple);
+    color: #fff;
+    padding: 1.5rem 1rem;
+    border: 4px solid #000;
+    border-width: 4px 0;
+    overflow-x: hidden;
+  }
+
+  .sponsors {
+    --gap: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .marquee {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap);
+  }
+
+  .marquee__hidden {
+    display: none;
+    @media screen and (max-width: 1000px) {
+      display: flex;
+    }
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 16px;
+    animation: none;
+
+    @media screen and (max-width: 1000px) {
+      animation: scroll 12s linear infinite;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  li {
+    display: flex;
+    width: 186px;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+</style>
