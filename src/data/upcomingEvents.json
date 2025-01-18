@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "305594224",
+    "title": "ForwardJS Ottawa Social - January 2025",
+    "eventUrl": "https://www.meetup.com/ottawa-forwardjs-meetup/events/305594224/",
+    "dateTime": "2025-01-28T18:00:00-05:00",
+    "rsvpsOpen": true,
+    "rsvpCount": 100,
+    "photo": null,
+    "memberPhotos": [
+      "https://secure.meetupstatic.com/photos/member/7/3/1/6/highres_257489462.jpeg",
+      "https://secure.meetupstatic.com/photos/member/5/8/5/highres_259921413.jpeg",
+      "https://secure.meetupstatic.com/photos/member/2/b/7/e/highres_314171134.jpeg",
+      "https://secure.meetupstatic.com/photos/member/2/9/3/b/highres_321310555.jpeg",
+      "https://secure.meetupstatic.com/photos/member/6/7/4/d/highres_277526445.jpeg"
+    ],
+    "location": {
+      "name": "Beyond the Pale Brewing Company",
+      "address": "250 City Centre Ave Bay 106 Ottawa ON ca"
+    }
+  }
+]
