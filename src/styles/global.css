@@ -12,7 +12,7 @@
 html,
 body {
   height: 100%;
-  font-family: "Noto Sans", serif;
+  font-family: "Noto Sans", sans-serif;
   font-optical-sizing: auto;
   background-color: #fff;
   color: #000;
