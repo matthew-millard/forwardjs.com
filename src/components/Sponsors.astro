@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import ButtonLink from "./ButtonLink.astro";
+import SponsorLink from "./SponsorLink.astro";
 
 import Fullscript from "../assets/fullscript.svg";
 import Jetbrains from "../assets/jetbrains.svg";
@@ -38,9 +38,9 @@ const sponsors = [
         {
           sponsors.map((sponsor) => (
             <li>
-              <ButtonLink href={sponsor.href}>
+              <SponsorLink href={sponsor.href}>
                 <Image src={sponsor.logo} alt={`${sponsor.name} Logo`} />
-              </ButtonLink>
+              </SponsorLink>
             </li>
           ))
         }
@@ -50,9 +50,9 @@ const sponsors = [
         {
           sponsors.map((sponsor) => (
             <li class="marquee__item">
-              <ButtonLink href={sponsor.href}>
+              <SponsorLink href={sponsor.href}>
                 <Image src={sponsor.logo} alt={`${sponsor.name} Logo`} />
-              </ButtonLink>
+              </SponsorLink>
             </li>
           ))
         }
