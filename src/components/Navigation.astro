@@ -1,56 +1,83 @@
 ---
 import Discord from "../assets/discord.svg";
 import Meetup from "../assets/meetup.svg";
-import Github from "../assets/github.svg";
+import Talk from "../assets/talk.svg";
 ---
 
 <nav>
-  <ul>
-    <li>
-      <a href="https://discord.gg/XMqZZtpPSK"
-        ><img
-          src={Discord.src}
-          width="24"
-          alt="Link to the ForwardJS Discord"
-        />Discord</a
-      >
-    </li>
-    <li>
-      <a href="https://www.meetup.com/ottawa-forwardjs-meetup/"
-        ><img
-          src={Meetup.src}
-          width="20"
-          alt="Link to the ForwardJS Ottawa on Meetup"
-        />Meetup</a
-      >
-    </li>
-    <li>
-      <a href="https://github.com/forwardjs">
-        <img
-          src={Github.src}
-          width="20"
-          alt="Link to the ForwardJS GitHub repository"
-        />
-        Contribute</a
-      >
-    </li>
-  </ul>
-</nav>
+  <div class="navigation">
+    <ul>
+      <li>
+        <a href="https://discord.gg/XMqZZtpPSK"
+          ><img
+            src={Discord.src}
+            width="24"
+            alt="Link to the ForwardJS Discord"
+          />Discord</a
+        >
+      </li>
+      <li>
+        <a href="https://www.meetup.com/ottawa-forwardjs-meetup/"
+          ><img
+            src={Meetup.src}
+            width="20"
+            alt="Link to the ForwardJS Ottawa on Meetup"
+          />Meetup</a
+        >
+      </li>
+      <li>
+        <a href="https://github.com/OttawaReactJS/talks/issues/new">
+          <img src={Talk.src} width="20" alt="Link to the ForwardJS Talks" />
+          Submit a Talk
+        </a>
+      </li>
+    </ul>
 
-<style>
-  ul {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    gap: 24px;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    padding: 1rem 2rem;
-  }
-  a {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-</style>
+    <style>
+      nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: var(--gray);
+      }
+
+      .navigation {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 1000px;
+        padding: 1.5rem;
+        @media screen and (max-width: 1000px) {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          gap: 42px;
+          padding: 1rem;
+        }
+      }
+
+      .logo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        gap: 32px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+    </style>
+  </div>
+</nav>

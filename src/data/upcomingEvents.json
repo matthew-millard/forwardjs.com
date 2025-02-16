@@ -1,12 +1,12 @@
 [
   {
-    "id": "305594224",
-    "title": "ForwardJS Ottawa Social - January 2025",
-    "eventUrl": "https://www.meetup.com/ottawa-forwardjs-meetup/events/305594224/",
-    "dateTime": "2025-01-28T18:00:00-05:00",
+    "id": "306116380",
+    "title": "ForwardJS Ottawa - February 2025",
+    "eventUrl": "https://www.meetup.com/ottawa-forwardjs-meetup/events/306116380/",
+    "dateTime": "2025-02-20T18:00:00-05:00",
     "rsvpsOpen": true,
-    "rsvpCount": 100,
-    "photo": null,
+    "rsvpCount": 120,
+    "photo": "https://secure.meetupstatic.com/photos/event/1/f/f/2/highres_526208178.jpeg",
     "memberPhotos": [
       "https://secure.meetupstatic.com/photos/member/7/3/1/6/highres_257489462.jpeg",
       "https://secure.meetupstatic.com/photos/member/5/8/5/highres_259921413.jpeg",
@@ -15,8 +15,8 @@
       "https://secure.meetupstatic.com/photos/member/6/7/4/d/highres_277526445.jpeg"
     ],
     "location": {
-      "name": "Beyond the Pale Brewing Company",
-      "address": "250 City Centre Ave Bay 106 Ottawa ON ca"
+      "name": "Shopify",
+      "address": "151 O’Connor, Ottawa ON CA"
     }
   }
 ]

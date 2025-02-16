@@ -16,8 +16,10 @@ const upcomingEvents = await getCollection("upcomingEvents");
           <div>
             <p>
               Meetups are usually on the third Thursday of every month, with
-              RSVPs opening one week beforehand. Stay tuned for the next one!
+              RSVPs opening one week beforehand.
             </p>
+              <br/>
+              <p>Stay tuned for the next one!</p>
           </div>
         )
       }
@@ -77,10 +79,10 @@ const upcomingEvents = await getCollection("upcomingEvents");
   .events {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 42px;
     max-width: 1000px;
     width: 100%;
-    padding: 1rem;
+    padding: 2rem 1rem;
   }
 
   .events__list {

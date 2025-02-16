@@ -1,27 +1,14 @@
 ---
-import ButtonLink from "./ButtonLink.astro";
 import peacetower from "../assets/peacetower.svg";
-import logo from "../assets/forward.svg";
+import HeroTypewriter from "./HeroTypewriter.astro";
+import Logo from "./Logo.astro";
 ---
 
 <section>
   <div class="hero">
     <div class="hero__text">
-      <div class="hero__logo">
-        <img
-          id="logo"
-          src={logo.src}
-          alt="ForwardJS Logo"
-          fetchpriority="high"
-        />
-        <h1>FORWARDJS</h1>
-      </div>
-      <ButtonLink
-        href="https://github.com/OttawaReactJS/talks/issues/new"
-        target="_blank"
-      >
-        Submit a talk proposal 🎤
-      </ButtonLink>
+      <Logo />
+      <HeroTypewriter />
     </div>
     <img
       id="peacetower"
@@ -48,11 +35,13 @@ import logo from "../assets/forward.svg";
     margin-top: 2rem;
     min-height: 595px;
     overflow-x: hidden;
+    transition: all 0.5s ease;
     @media screen and (max-width: 1000px) {
       width: 100%;
       grid-template-columns: 1fr;
       place-items: center;
       gap: 2rem;
+      padding: 0 2rem;
     }
   }
 
@@ -61,28 +50,13 @@ import logo from "../assets/forward.svg";
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-  }
-
-  .hero__logo {
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-    align-items: center;
+    gap: 24px;
+    text-align: center;
   }
 
   #peacetower {
     width: 100%;
     max-width: 470px;
     transform: translateX(28px);
-  }
-
-  #logo {
-    width: 42px;
-    height: 42px;
-  }
-
-  h1 {
-    font-size: 3rem;
   }
 </style>
