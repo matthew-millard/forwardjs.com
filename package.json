@@ -2,6 +2,10 @@
   "name": "forwardjs",
   "type": "module",
   "version": "0.0.1",
+  "engines": {
+    "node": ">=22",
+    "npm": ">=10"
+  },
   "scripts": {
     "postinstall": "npm run data",
     "prebuild": "npm run data",

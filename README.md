@@ -1,5 +1,41 @@
 # ForwardJS
 
+## 🚀 Getting started
+
+### Prerequisites
+
+- Node.js ≥ 22.0.0
+- npm ≥ 10.0.0
+
+### Installation
+
+Clone the repository and install dependencies:
+
+```bash
+# Clone the repository
+git clone https://github.com/OttawaReactJS/forwardjs.git
+
+# Navigate to project directory
+cd forwardjs
+
+# Install dependencies
+npm install
+```
+
+### Development
+
+Start the development server:
+
+```bash
+// fetch Meetup data
+npm run data
+
+// start dev server
+npm run dev
+
+// site will be available at http://localhost:4321
+```
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
@@ -16,7 +52,7 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 🚀 Project Structure
+## 🧱 Project Structure
 
 ```text
 /
