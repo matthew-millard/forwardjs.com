@@ -9,9 +9,14 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "data": "node scripts/fetchMeetupData.js"
+    "data": "node scripts/fetchMeetupData.js",
+    "lint": "biome check src/*",
+    "lint:fix": "biome check --write src/*"
   },
   "dependencies": {
     "astro": "^5.1.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4"
   }
 }
