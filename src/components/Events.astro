@@ -18,14 +18,15 @@ const upcomingEvents = await getCollection("upcomingEvents");
               Meetups are usually on the third Thursday of every month, with
               RSVPs opening one week beforehand.
             </p>
-              <br/>
-              <p>Stay tuned for the next one!</p>
+            <br />
+            <p>Stay tuned for the next one!</p>
           </div>
         )
       }
       {
         upcomingEvents.map((event) => (
           <Meetup
+            id={event.id}
             type="upcoming"
             title={event.data.title}
             dateTime={event.data.dateTime}
@@ -46,6 +47,7 @@ const upcomingEvents = await getCollection("upcomingEvents");
       {
         pastEvents.map((event) => (
           <Meetup
+            id={event.id}
             type="past"
             title={event.data.title}
             dateTime={event.data.dateTime}
