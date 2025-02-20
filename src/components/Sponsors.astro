@@ -46,10 +46,10 @@ const sponsors = [
         }
       </ul>
       <!-- these items are hidden unless the marquee is active -->
-      <ul aria-hidden="true" class="marquee__list marquee__hidden">
+      <ul aria-hidden="true" class="marquee__hidden">
         {
           sponsors.map((sponsor) => (
-            <li class="marquee__item">
+            <li>
               <SponsorLink href={sponsor.href}>
                 <Image src={sponsor.logo} alt={`${sponsor.name} Logo`} />
               </SponsorLink>
