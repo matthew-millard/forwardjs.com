@@ -1,5 +1,5 @@
 ---
-import { formatDateTime } from "../utils";
+import { formatDateTime } from "../../public/scripts/utils";
 const {
   id,
   type,
@@ -55,7 +55,7 @@ const {
 <script type="module" define:vars={{ id, dateTime }}>
   // by default the Date Time will be based on the server time zone
   // need to format the date time on client side
-  import { formatDateTime } from "./src/utils.js";
+  import { formatDateTime } from "./scripts/utils.js";
   const meetupElement = document.getElementById(id);
   const dateElement = meetupElement.querySelector("#date");
   dateElement.textContent = `📅 ${formatDateTime(dateTime)}`;

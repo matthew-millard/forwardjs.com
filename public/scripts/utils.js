@@ -1,13 +1,3 @@
-// export function createGoogleMapsLink(address) {
-//   const baseURL = "https://www.google.com/maps/search/";
-//   const url = new URL(baseURL);
-//   const params = new URLSearchParams();
-//   params.set("q", address);
-//   url.search = params.toString();
-
-//   return url.href;
-// }
-
 export function formatDateTime(dateTimeString) {
   const dateTime = new Date(dateTimeString);
   const currentDate = new Date();
