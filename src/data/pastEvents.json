@@ -1,5 +1,25 @@
 [
   {
+    "id": "306116380",
+    "title": "ForwardJS Ottawa - February 2025",
+    "eventUrl": "https://www.meetup.com/ottawa-forwardjs-meetup/events/306116380/",
+    "dateTime": "2025-02-20T18:00:00-05:00",
+    "rsvpsOpen": true,
+    "rsvpCount": 120,
+    "photo": "https://secure.meetupstatic.com/photos/event/a/0/1/7/highres_526360983.jpeg",
+    "memberPhotos": [
+      "https://secure.meetupstatic.com/photos/member/7/3/1/6/highres_257489462.jpeg",
+      "https://secure.meetupstatic.com/photos/member/5/8/5/highres_259921413.jpeg",
+      "https://secure.meetupstatic.com/photos/member/2/b/7/e/highres_314171134.jpeg",
+      "https://secure.meetupstatic.com/photos/member/2/9/3/b/highres_321310555.jpeg",
+      "https://secure.meetupstatic.com/photos/member/6/7/4/d/highres_277526445.jpeg"
+    ],
+    "location": {
+      "name": "Shopify",
+      "address": "151 O’Connor, Ottawa ON CA"
+    }
+  },
+  {
     "id": "305594224",
     "title": "ForwardJS Ottawa Social - January 2025",
     "eventUrl": "https://www.meetup.com/ottawa-forwardjs-meetup/events/305594224/",
@@ -77,26 +97,6 @@
     "location": {
       "name": "Spiria - Gatineau",
       "address": "60 Prom. du Portage Gatineau QC ca"
-    }
-  },
-  {
-    "id": "302742495",
-    "title": "ForwardJS Ottawa - August 2024",
-    "eventUrl": "https://www.meetup.com/ottawa-forwardjs-meetup/events/302742495/",
-    "dateTime": "2024-08-22T18:00:00-04:00",
-    "rsvpsOpen": false,
-    "rsvpCount": 97,
-    "photo": "https://secure.meetupstatic.com/photos/event/b/b/6/c/highres_484007980.jpeg",
-    "memberPhotos": [
-      "https://secure.meetupstatic.com/photos/member/4/a/6/e/highres_316399054.jpeg",
-      "https://secure.meetupstatic.com/photos/member/2/b/7/e/highres_314171134.jpeg",
-      "https://secure.meetupstatic.com/photos/member/2/9/3/b/highres_321310555.jpeg",
-      "https://secure.meetupstatic.com/photos/member/6/7/4/d/highres_277526445.jpeg",
-      "https://secure.meetupstatic.com/photos/member/4/d/0/8/highres_288619720.jpeg"
-    ],
-    "location": {
-      "name": "Shopify",
-      "address": "151 O'Connor Ottawa ON ca"
     }
   }
 ]
