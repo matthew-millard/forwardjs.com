@@ -1,0 +1,28 @@
+---
+import { icons } from "./icons";
+
+const { name = "", inverted = false, size = 24 } = Astro.props;
+
+const icon = icons[name];
+---
+
+<svg
+  class={`icon ${inverted ? "inverted" : ""}`}
+  width={size}
+  height={size}
+  viewBox={icon.viewBox}
+  fill="currentColor"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d={icon.path}></path>
+</svg>
+
+<style>
+  .icon {
+    color: #000;
+  }
+
+  .inverted {
+    color: #fff;
+  }
+</style>

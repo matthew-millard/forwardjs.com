@@ -1,7 +1,5 @@
 ---
-import Discord from "../assets/discord.svg";
-import Meetup from "../assets/meetup.svg";
-import Talk from "../assets/talk.svg";
+import Icon from "./icons/Icon.astro";
 ---
 
 <nav>
@@ -9,26 +7,18 @@ import Talk from "../assets/talk.svg";
     <ul>
       <li>
         <a href="https://discord.gg/XMqZZtpPSK"
-          ><img
-            src={Discord.src}
-            width="24"
-            alt="Link to the ForwardJS Discord"
-          />Discord</a
+          ><Icon name="discord" />Discord</a
         >
       </li>
       <li>
         <a href="https://www.meetup.com/ottawa-forwardjs-meetup/"
-          ><img
-            src={Meetup.src}
-            width="20"
-            alt="Link to the ForwardJS Ottawa on Meetup"
-          />Meetup</a
+          ><Icon name="meetup" size={20} />Meetup</a
         >
       </li>
       <li>
         <a href="https://github.com/OttawaReactJS/talks/issues/new">
-          <img src={Talk.src} width="20" alt="Link to the ForwardJS Talks" />
-          Submit a Talk
+          <Icon name="microphone" size="18" />
+          Submit a talk
         </a>
       </li>
     </ul>
