@@ -3,9 +3,12 @@ import logo from "../assets/forward.svg";
 ---
 
 <header>
-  <nav> <div class="logo">
-      <img src={logo.src} alt="ForwardJS Logo" width="32" loading="eager" />
-      <span>FORWARDJS</span>
+  <nav>
+    <div class="logo">
+      <a href="/">
+        <img src={logo.src} alt="ForwardJS Logo" width="32" loading="eager" />
+        <span>FORWARDJS</span>
+      </a>
     </div>
 
     <div class="hamburger-menu">
@@ -18,7 +21,6 @@ import logo from "../assets/forward.svg";
 
     <div class="nav-items" id="navItems">
       <ul>
-        <li><a href="/">Home</a></li>
         <li><a href="/#events">Events</a></li>
         <li>
           <a target="_blank" href="https://github.com/OttawaReactJS/talks"
