@@ -1,73 +1,235 @@
 ---
-import Icon from "./icons/Icon.astro";
+import logo from "../assets/forward.svg";
 ---
 
-<nav>
-  <div class="navigation">
-    <ul>
-      <li>
-        <a href="https://discord.gg/XMqZZtpPSK"
-          ><Icon name="discord" />Discord</a
-        >
-      </li>
-      <li>
-        <a href="https://www.meetup.com/ottawa-forwardjs-meetup/"
-          ><Icon name="meetup" size={20} />Meetup</a
-        >
-      </li>
-      <li>
-        <a href="https://github.com/OttawaReactJS/talks/issues/new">
-          <Icon name="microphone" size="18" />
-          Submit a talk
-        </a>
-      </li>
-    </ul>
+<header>
+  <nav>
+    <div class="logo">
+      <img src={logo.src} alt="ForwardJS Logo" width="32" loading="eager" />
+      <span>FORWARDJS</span>
+    </div>
 
-    <style>
-      nav {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        background-color: var(--gray);
-      }
+    <div class="hamburger-menu">
+      <button id="menuToggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
 
-      .navigation {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        width: 1000px;
-        padding: 1.5rem;
-        @media screen and (max-width: 1000px) {
-          display: flex;
-          flex-direction: column;
-          width: 100%;
-          gap: 42px;
-          padding: 1rem;
+    <div class="nav-items" id="navItems">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/#events">Events</a></li>
+        <li>
+          <a target="_blank" href="https://github.com/OttawaReactJS/talks"
+            >Talks</a
+          >
+        </li>
+        <li>
+          <a target="_blank" href="https://discord.gg/XMqZZtpPSK">Discord</a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            href="https://www.meetup.com/ottawa-forwardjs-meetup/">Meetup</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .scrolled {
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    height: 75px;
+    padding: 1.5rem;
+  }
+
+  .nav-items {
+    display: flex;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.5rem 1rem;
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  #menuToggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  #menuToggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #000;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+
+  @media (max-width: 999px) {
+    header {
+      background-color: #fff;
+    }
+
+    .hamburger-menu {
+      display: block;
+    }
+
+    .nav-items {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+      background-color: #fff;
+      transition: all 0.1s ease;
+    }
+
+    .nav-items.active {
+      max-height: 300px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    ul {
+      flex-direction: column;
+      width: 100%;
+      padding: 1rem;
+    }
+
+    li {
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    li:last-child {
+      border-bottom: none;
+    }
+
+    a {
+      width: 100%;
+      padding: 1rem;
+      justify-content: center;
+    }
+
+    /* Hamburger animation when active */
+    #menuToggle.active span:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg);
+    }
+
+    #menuToggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    #menuToggle.active span:nth-child(3) {
+      transform: translateY(-10.5px) rotate(-45deg);
+    }
+  }
+</style>
+
+<script is:inline>
+  const header = document.querySelector("header");
+
+  function updateHeaderClass() {
+    if (window.scrollY > 0) {
+      header?.classList.add("scrolled");
+    } else {
+      header?.classList.remove("scrolled");
+    }
+  }
+
+  window.addEventListener("scroll", updateHeaderClass);
+  document.addEventListener("DOMContentLoaded", updateHeaderClass);
+
+  // Handle mobile menu toggle
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menuToggle");
+    const navItems = document.getElementById("navItems");
+
+    if (menuToggle && navItems) {
+      menuToggle.addEventListener("click", function () {
+        navItems.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+      });
+
+      // Close menu when clicking on a link
+      const navLinks = navItems.querySelectorAll("a");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+          navItems.classList.remove("active");
+          menuToggle.classList.remove("active");
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", function (event) {
+        const isClickInsideMenu = navItems.contains(event.target);
+        const isClickOnToggle = menuToggle.contains(event.target);
+
+        if (
+          !isClickInsideMenu &&
+          !isClickOnToggle &&
+          navItems.classList.contains("active")
+        ) {
+          navItems.classList.remove("active");
+          menuToggle.classList.remove("active");
         }
-      }
-
-      .logo {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 8px;
-      }
-
-      ul {
-        display: flex;
-        flex-direction: row;
-        list-style: none;
-        gap: 32px;
-        justify-content: center;
-        align-items: center;
-      }
-
-      a {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-    </style>
-  </div>
-</nav>
+      });
+    }
+  });
+</script>
