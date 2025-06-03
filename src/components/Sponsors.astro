@@ -7,7 +7,7 @@ import Jetbrains from "../assets/jetbrains.svg";
 import JSNation from "../assets/jsnation.svg";
 import Owner from "../assets/owner.webp";
 import Shopify from "../assets/shopify.svg";
-// import Spiria from "../assets/spiria.svg";
+import Spiria from "../assets/spiria.svg";
 import TalentLab from "../assets/talentlab.webp";
 
 const sponsors = [
@@ -23,7 +23,7 @@ const sponsors = [
     href: "https://fullscript.com",
   },
   { name: "Owner", logo: Owner, href: "https://owner.com" },
-  // { name: "Spiria", logo: Spiria, href: "https://spiria.com" },
+  { name: "Spiria", logo: Spiria, href: "https://spiria.com" },
   {
     name: "Jetbrains",
     logo: Jetbrains,
@@ -86,7 +86,7 @@ const sponsors = [
     display: flex;
     flex-direction: column;
     gap: var(--gap);
-    max-width: 1200px;
+    max-width: 1440px;
     margin: auto;
   }
 
@@ -98,7 +98,7 @@ const sponsors = [
 
   .marquee__hidden {
     display: none;
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1440px) {
       display: flex;
     }
   }
@@ -111,7 +111,7 @@ const sponsors = [
     gap: 16px;
     animation: none;
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1440px) {
       animation: scroll 12s linear infinite;
     }
   }
