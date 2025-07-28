@@ -6,7 +6,7 @@ const MEETUP_ID = "28909672";
 async function writeJsonToFile(filename, jsonData) {
   const jsonString = JSON.stringify(jsonData, null, 2);
 
-  await writeFile(filename, jsonString, "utf8");
+  await writeFile(filename, jsonString + "\n", "utf8");
 }
 
 async function getNextDataJsonFromPage(url) {
